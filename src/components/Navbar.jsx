@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import chipperLogo from '../assets/image (66).png';
 
 const NAV_ITEMS = [
   { label: 'Home',       id: 'home'       },
@@ -79,7 +80,7 @@ export default function Navbar() {
             aria-label="Back to top"
           >
             <img
-              src="/src/assets/image (66).png"
+              src={chipperLogo}
               alt="Chipper Logo"
               className="h-14 w-auto object-contain hover:scale-105 transition-transform"
             />
