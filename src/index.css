@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Baloo+2:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ─── Global ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Baloo 2', cursive;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Shared animations ─── */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0);     }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes float-x {
+  0%, 100% { transform: translate3d(0, 0, 0);      }
+  50%       { transform: translate3d(30px, 0, 0);  }
+}
+@keyframes text-float {
+  0%, 100% { transform: translateY(0);     }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes move-and-float {
+  0%, 100% { transform: translate(0, 0);            }
+  25%       { transform: translate(-350px, -150px); }
+  50%       { transform: translate(-350px, -130px); }
+  75%       { transform: translate(-450px, -180px); }
+}
+
+/* ─── Roadmap card entrance animation ─── */
+@keyframes fade-scale-in {
+  0%   { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1);    }
+}
+
+/* ─── Boat slide + shake — mobile ─── */
+@keyframes slide-right-mobile {
+  0%, 100% { transform: translateX(-50%) rotate(0deg);                }
+  25%       { transform: translateX(calc(-50% + 15px)) rotate(-3deg); }
+  50%       { transform: translateX(calc(-50% + 30px)) rotate(3deg);  }
+  75%       { transform: translateX(calc(-50% + 15px)) rotate(-3deg); }
+}
+
+/* ─── Boat slide + shake — desktop ─── */
+@keyframes slide-right-desktop {
+  0%, 100% { transform: translateX(0) rotate(0deg);     }
+  25%       { transform: translateX(50px) rotate(-3deg); }
+  50%       { transform: translateX(100px) rotate(3deg); }
+  75%       { transform: translateX(50px) rotate(-3deg); }
+}
+
+/* ─── Background drift — mobile AboutUs ─── */
+@keyframes bg-drift {
+  0%, 100% { background-position: right center; }
+  50%       { background-position: right top;   }
+}
+
+/* ─── Character drift up/right — mobile AboutUs only ─── */
+@keyframes float-up-right-mobile {
+  0%, 100% { transform: translate(0, 0);         }
+  50%       { transform: translate(40px, -138px); }
+}
+
+.animate-float-y        { animation: float-y               3.5s ease-in-out infinite; }
+.animate-float-x        { animation: float-x               4s   ease-in-out infinite; }
+.animate-text-float     { animation: text-float            3s   ease-in-out infinite; }
+.animate-move-float     { animation: move-and-float        6s   ease-in-out infinite; }
+.animate-fade-scale-in  { animation: fade-scale-in         0.8s ease-out    forwards; }
+.animate-slide-right    { animation: slide-right-mobile    4s   ease-in-out infinite; }
+.animate-bg-drift       { animation: bg-drift              6s   ease-in-out infinite; }
+.animate-float-up-right { animation: float-up-right-mobile 3s   ease-in-out infinite; }
+
+/* ─── Neobrutalist shadows ─── */
+.neo-shadow    { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+.neo-shadow-sm { box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); }
+.neo-shadow-lg { box-shadow: 6px 6px 0px 0px rgba(0,0,0,1); }
+
+/* ─── Reduced motion — accessibility ─── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-y,
+  .animate-float-x,
+  .animate-text-float,
+  .animate-move-float,
+  .animate-fade-scale-in,
+  .animate-slide-right,
+  .animate-bg-drift,
+  .animate-float-up-right { animation: none; }
+}
+
+/* ─── Desktop override for boat animation ─── */
+@media (min-width: 768px) {
+  .animate-slide-right {
+    animation: slide-right-desktop 4s ease-in-out infinite;
+  }
+}
