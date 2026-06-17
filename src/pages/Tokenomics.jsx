@@ -39,7 +39,7 @@ export default function Tokenomics() {
           alt="Animated boat"
           className="md:hidden absolute z-10 pointer-events-none animate-slide-right
             top-[70%] left-1/4"
-          style={{ width: 'clamp(8rem, 60vw, 500px)', marginTop: '-80px' }}
+          style={{ width: 'clamp(8rem, 60vw, 500px)', marginTop: '-75px' }}
           draggable="false"
         />
 
