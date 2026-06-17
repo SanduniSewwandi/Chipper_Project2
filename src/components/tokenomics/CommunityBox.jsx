@@ -29,7 +29,7 @@ export default function CommunityBox({ mobile = false }) {
   return (
     <div className="relative flex flex-col items-center w-full">
       <div className={`absolute z-20 pointer-events-none ${
-        mobile ? '-top-146 right-20' : 'top-0 right-5 -translate-y-[150%] pb-2'
+        mobile ? '-top-126 right-20' : 'top-0 right-5 -translate-y-[130%] pb-2'
       }`}>
         <img
           src={infoBoxIcon}
