@@ -1,4 +1,3 @@
-
 import chipperCharacter  from '../assets/image (72) 1.png';
 import chipperCharacter2 from '../assets/image (72) 2.png';
 import rectangle2        from '../assets/Rectangle 2.png';
@@ -36,39 +35,54 @@ export default function Roadmap() {
   return (
     <section
       id="roadmap"
-      className="relative w-full flex flex-col items-center py-16 sm:py-30 px-4 sm:px-6 overflow-hidden"
+      className="relative w-full flex flex-col items-center py-16 sm:py-30 px-4 sm:px-6 overflow-x-hidden"
       style={{
-        backgroundImage:    `url(${rectangle2})`,
-        backgroundSize:     'cover',
+        backgroundImage: `url(${rectangle2})`,
+        backgroundSize: 'cover',
         backgroundPosition: 'center top',
-        backgroundRepeat:   'no-repeat',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       {/* ── TITLE ── */}
-     <h2 className="
+      <h2
+        className="
           text-3xl sm:text-4xl md:text-5xl font-black text-black
-           z-50 text-center mb-8
-           lg:absolute lg:top-12 lg:right-86 lg:mb-0
-           " style={{ fontFamily: "'Fuzzy Bubbles', cursive" }}>
-  Roadmap
-</h2>
+          z-50 text-center mb-8
+          lg:absolute lg:top-30 lg:right-86 lg:mb-0
+        "
+        style={{ fontFamily: "'Fuzzy Bubbles', cursive" }}
+      >
+        Roadmap
+      </h2>
 
-      {/* ════════════════════════════════════════
-          MOBILE / TABLET  (hidden on lg+)
-          Exact same layout as original
-      ════════════════════════════════════════ */}
-      <div className="lg:hidden w-full max-w-sm mx-auto flex flex-col gap-6 z-10">
+      {/* ════════════════════════════════
+          MOBILE / TABLET FIXED (≤ lg)
+      ════════════════════════════════ */}
+      <div
+  className="
+    lg:hidden
+    w-full
+    max-w-sm sm:max-w-lg md:max-w-2xl
+    mx-auto
+    flex flex-col gap-6
+    z-10
+    px-2 sm:px-4
+    overflow-visible
+    md:pb-32
+  "
+>
 
-        {/* Phase 01 — right aligned */}
+        {/* Phase 01 */}
         <PhaseCard phase={PHASES[0]} className="w-[68%] ml-auto" />
 
-        {/* Phase 02 — card left, character overlapping right */}
-        <div className="relative flex items-center">
+        {/* Phase 02 */}
+        <div className="relative flex items-center ">
+
           <PhaseCard phase={PHASES[1]} className="w-[68%] flex-shrink-0" />
 
-          {/* Characters — overlapping right side */}
+          {/* Characters */}
           <div className="absolute right-[-16px] bottom-[-20px] w-[180%] pointer-events-none z-20">
-            {/* Shadow/back character */}
+
             <img
               src={chipperCharacter}
               alt=""
@@ -76,7 +90,7 @@ export default function Roadmap() {
               className="absolute -top-[120px] left-[200px] w-full object-contain scale-x-[-1]"
               style={{ zIndex: 1 }}
             />
-            {/* Main character */}
+
             <img
               src={chipperCharacter}
               alt="Chipper Character"
@@ -85,7 +99,7 @@ export default function Roadmap() {
             />
           </div>
 
-          {/* Center roadmap image */}
+          {/* Center image */}
           <img
             src={roadmapCenterImage}
             alt="Roadmap Center"
@@ -93,29 +107,33 @@ export default function Roadmap() {
           />
         </div>
 
-        {/* Phase 03 — right aligned, extra top margin for character space */}
-        <PhaseCard phase={PHASES[2]} className="w-[68%] ml-auto mt-16" />
+        {/* Phase 03 (FIXED CROPPING ISSUE) */}
+        <PhaseCard
+          phase={PHASES[2]}
+          className="w-[68%] ml-auto mt-16 relative z-10"
+        />
 
-        {/* Phase 04 — center */}
+        {/* Phase 04 */}
         <PhaseCard phase={PHASES[3]} className="w-[68%] mx-auto" />
       </div>
 
-      {/* ════════════════════════════════════════
-          DESKTOP  (hidden below lg)
-          Exact same scattered layout as original
-      ════════════════════════════════════════ */}
+      {/* ════════════════════════════════
+          DESKTOP (lg+ ONLY)
+      ════════════════════════════════ */}
       <div
         className="relative hidden lg:block w-full max-w-6xl mx-auto mt-16"
         style={{ minHeight: '650px' }}
       >
-        {/* Characters — centered, large, behind cards */}
+        {/* Characters */}
         <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center">
+
           <img
             src={chipperCharacter2}
             alt=""
             aria-hidden="true"
             className="w-full max-w-[930px] h-auto object-contain z-30 translate-x-[70%] translate-y-[77%]"
           />
+
           <img
             src={chipperCharacter}
             alt="Chipper Character"
@@ -123,7 +141,7 @@ export default function Roadmap() {
           />
         </div>
 
-        {/* Centre piece */}
+        {/* Center piece */}
         <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
           <img
             src={roadmapCenterImage}
@@ -132,13 +150,12 @@ export default function Roadmap() {
           />
         </div>
 
-        {/* Phase cards — exact same positions as original */}
-        <PhaseCard phase={PHASES[0]} className="absolute -top-[5%]   left-[12%]   max-w-sm" />
-        <PhaseCard phase={PHASES[1]} className="absolute top-[20%]  right-[10%]  max-w-sm" />
+        {/* Phase cards */}
+        <PhaseCard phase={PHASES[0]} className="absolute -top-[5%] left-[12%] max-w-sm" />
+        <PhaseCard phase={PHASES[1]} className="absolute top-[20%] right-[10%] max-w-sm" />
         <PhaseCard phase={PHASES[2]} className="absolute bottom-[20%] -left-[10%] max-w-sm" />
-        <PhaseCard phase={PHASES[3]} className="absolute -bottom-[6%]  right-[16%] max-w-sm" />
+        <PhaseCard phase={PHASES[3]} className="absolute -bottom-[6%] right-[16%] max-w-sm" />
       </div>
-
     </section>
   );
 }

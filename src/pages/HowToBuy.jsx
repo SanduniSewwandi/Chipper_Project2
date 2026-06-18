@@ -33,31 +33,48 @@ export default function HowToBuy() {
         <img
           src={topBackgroundOverlay}
           alt=""
-          aria-hidden="true"
           className="w-full h-auto block object-contain -mt-[45px]"
         />
       </div>
 
       {/* Main Section */}
       <section
-        className="relative w-full flex flex-col items-center justify-center py-4 md:py-6 px-20 sm:px-12 md:px-10 overflow-hidden"
+        className="
+          relative w-full flex flex-col items-center justify-center
+          py-4 md:py-6
+          px-4 sm:px-8 md:px-10
+          overflow-hidden
+        "
         style={{
-          backgroundImage:    `url(${howToBuyBg})`,
-          backgroundSize:     'cover',         /* ← was '100% 100%', now cover */
+          backgroundImage: `url(${howToBuyBg})`,
+          backgroundSize: 'cover',
           backgroundPosition: 'center center',
-          backgroundRepeat:   'no-repeat',
+          backgroundRepeat: 'no-repeat',
         }}
       >
+
         {/* Title */}
-        <h2 className="text-3xl md:text-5xl font-black text-black mb-10 md:mb-14 z-10">
+        <h2 className="text-3xl md:text-5xl font-black text-black mb-10 md:mb-14 z-10 text-center">
           How to Buy
         </h2>
 
-        {/* Cards + Desktop Character */}
-        <div className="relative w-full max-w-6xl mx-auto flex flex-row items-center gap-4 md:gap-8 z-10">
+        {/* Cards + Character (FIXED TABLET) */}
+        <div className="
+          relative w-full max-w-6xl mx-auto
+          flex flex-col lg:flex-row
+          items-center
+          gap-6 md:gap-8
+          z-10
+        ">
 
           {/* Desktop Character */}
-          <div className="hidden md:flex flex-shrink-0 items-end z-50 justify-center w-48 lg:w-60 translate-y-[30px] -translate-x-[60px] animate-float-y">
+          <div className="
+            hidden lg:flex
+            flex-shrink-0 items-end justify-center
+            w-60
+            translate-y-[30px] -translate-x-[60px]
+            animate-float-y
+          ">
             <img
               src={chipperCharacter}
               alt="Chipper Character"
@@ -66,7 +83,12 @@ export default function HowToBuy() {
           </div>
 
           {/* Step Cards */}
-          <div className="flex flex-col sm:flex-row gap-6 md:gap-10 w-full">
+          <div className="
+            flex flex-col sm:flex-row
+            gap-6 md:gap-10
+            w-full
+            min-w-0
+          ">
             {STEPS.map((step) => (
               <StepCard
                 key={step.id}
@@ -75,16 +97,18 @@ export default function HowToBuy() {
               />
             ))}
           </div>
+
         </div>
 
         {/* Mobile Character */}
-        <div className="flex md:hidden mt-8 w-45 mx-auto z-10 animate-float-y">
+        <div className="flex lg:hidden mt-8 w-45 mx-auto z-10 animate-float-y">
           <img
             src={chipperCharacter}
             alt="Chipper Character"
             className="w-full h-auto object-contain"
           />
         </div>
+
       </section>
 
       {/* Bottom Overlay */}
@@ -92,7 +116,6 @@ export default function HowToBuy() {
         <img
           src={topBackgroundOverlay}
           alt=""
-          aria-hidden="true"
           className="w-full h-auto block object-contain rotate-180 -scale-x-100"
         />
       </div>

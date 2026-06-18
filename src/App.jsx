@@ -29,7 +29,7 @@ export default function App() {
       </div>
 
       {/* Tokenomics: overlap on both mobile and desktop */}
-<div className="relative -mt-[300px] md:-mt-[316px] z-[70]">
+<div className="relative -mt-[230px] md:-mt-[316px] z-[70]">
   <Tokenomics />
 </div>
 

@@ -17,7 +17,7 @@ function CommunityText() {
 function JoinButton() {
   return (
     <button
-      className="bg-[#ffdf1b] hover:bg-[#ffe74c] text-black font-black text-sm px-6 py-2.5 rounded-xl border-4 border-black neo-shadow active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+      className="bg-[#ffdf1b] hover:bg-[#ffe74c] text-black font-black text-sm px-6 py-2.5 rounded-xl border-4 border-black neo-shadow active:translate-x-[10px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
       style={{ fontFamily: "'Bubblegum Sans', cursive" }}
     >
       Join Community
@@ -29,7 +29,7 @@ export default function CommunityBox({ mobile = false }) {
   return (
     <div className="relative flex flex-col items-center w-full">
       <div className={`absolute z-20 pointer-events-none ${
-        mobile ? '-top-116 right-20' : 'top-0 right-5 -translate-y-[130%] pb-2'
+        mobile ? '-top-116 right-20' : 'top-0 right-15 -translate-y-[130%] pb-2'
       }`}>
         <img
           src={infoBoxIcon}

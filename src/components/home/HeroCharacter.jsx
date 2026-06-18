@@ -1,14 +1,8 @@
-/**
- * HeroCharacter.jsx
- * Chipper waving character image.
- * Accepts a className prop so the parent controls
- * position, size, and animation per breakpoint.
- */
 import chipperWave from '../../assets/home-image.png';
 
-export default function HeroCharacter({ className = '' }) {
+export default function HeroCharacter({ className = '', style = {} }) {
   return (
-    <div className={`pointer-events-none ${className}`}>
+    <div className={`pointer-events-none ${className}`} style={style}>
       <img
         src={chipperWave}
         alt="Chipper character waving"

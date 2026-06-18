@@ -11,17 +11,26 @@ export default function StepCard({ title, description }) {
         flex flex-col
         gap-3
         flex-1
+        min-w-0
       "
     >
       <h3
-        className="text-base md:text-lg font-black text-black text-center leading-snug"
+        className="
+          text-base md:text-lg
+          font-black text-black text-center leading-snug
+          break-words
+        "
         style={{ fontFamily: "'Fuzzy Bubbles', cursive" }}
       >
         {title}
       </h3>
 
       <p
-        className="text-xs md:text-sm text-black text-center leading-relaxed"
+        className="
+          text-xs md:text-sm
+          text-black text-center leading-relaxed
+          break-words
+        "
         style={{ fontFamily: "'Fuzzy Bubbles', cursive" }}
       >
         {description}
