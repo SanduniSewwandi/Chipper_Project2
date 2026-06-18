@@ -53,7 +53,8 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="w-full -mt-12 z-20 relative -translate-x-30 sm:-translate-x-8">
+        {/* CONTRACT IMAGE (unchanged) */}
+        <div className="w-full -mt-12 z-10 relative -translate-x-30 sm:-translate-x-8">
           <img
             src={contractImage}
             className="w-full h-auto object-contain"
@@ -61,16 +62,17 @@ export default function AboutUs() {
           />
         </div>
 
-        <div className="w-full flex justify-end z-50 -mt-10 pointer-events-none">
+        {/* CHIPPER WAVE (FIXED FRONT LAYER ONLY) */}
+        <div className="w-full flex justify-end z-50 -mt-10 pointer-events-none relative">
           <img
             src={chipperWave}
-            className="w-[75%] max-w-xs h-auto object-contain animate-float-up-right"
+            className="w-[75%] max-w-xs h-auto object-contain animate-float-up-right relative z-30"
             alt=""
           />
         </div>
       </div>
 
-      {/* DESKTOP + TABLET (IMPORTANT FIX HERE) */}
+      {/* DESKTOP + TABLET (UNCHANGED) */}
       <section
         id="aboutus"
         className="
@@ -90,7 +92,7 @@ export default function AboutUs() {
           }}
         />
 
-        {/* Character (UNCHANGED POSITION — only scaling improved for tablet) */}
+        {/* Character */}
         <div className="
           absolute
           left-[-10px] sm:left-10 md:left-25 lg:left-85
@@ -102,7 +104,7 @@ export default function AboutUs() {
           <img src={chipperWave} className="w-full h-auto object-contain" />
         </div>
 
-        {/* Right wrapper (UNCHANGED POSITION + TABLET SAFE WIDTH) */}
+        {/* Right wrapper */}
         <div className="
           relative z-30
           w-full max-w-xl
@@ -111,7 +113,7 @@ export default function AboutUs() {
           -mt-1 md:-mt-0
         ">
 
-          {/* White box (UNCHANGED POSITION) */}
+          {/* White box */}
           <div className="
             absolute -top-80 left-0 w-full
             bg-white border-[3px] border-black rounded-[2rem]
