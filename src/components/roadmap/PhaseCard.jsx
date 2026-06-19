@@ -1,9 +1,3 @@
-/**
- * PhaseCard.jsx
- * Exact same style as original — border-4, shadow, text sizes.
- * Font changed to 'Fuzzy Bubbles' to match the rounded handwriting look.
- * animate-corner-in replaced with animate-fade-scale-in from index.css.
- */
 export default function PhaseCard({ phase, className = '' }) {
   return (
     <div
